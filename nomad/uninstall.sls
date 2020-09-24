@@ -32,5 +32,5 @@ nomad-remove-datadir:
       - name: {{ nomad.config.data_dir }}
       - require:
         - nomad-remove-config
-      - onlyif: 
+      - onlyif:
         - 'command -v {{ nomad.bin_dir }}/nomad'
