@@ -1,9 +1,9 @@
-# vim: set softtabstop=2 tabstop=2 shiftwidth=2 expandtab autoindent ft=sls syntax=yaml:
-
+# vim: set softtabstop=2 tabstop=2 shiftwidth=2 expandtab autoindent ft=yaml
+---
 nomad:
   bin_dir: /usr/bin
   config_dir: /etc/nomad.d
-  use_local_service_file: False
+  use_local_service_file: false
   config:
     data_dir: /var/lib/nomad
     # Nodes not bound to consul must be configured to advertise themselves.
@@ -33,11 +33,11 @@ nomad:
                   {%- endif %}
              {%- endfor %}"
     server:
-      enabled: True
+      enabled: true
       bootstrap_expect: 1
       encrypt: "AaABbB+CcCdDdEeeFFfggG=="
     client:
-      enabled: True
+      enabled: true
 # Sample configuration for a Consul deployment:
 #    consul:
 #      ssl: True
