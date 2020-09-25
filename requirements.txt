@@ -1,4 +1,4 @@
 py==1.9.0
-pytest==6.0.2
-six==1.15.0
-testinfra==5.3.1
+pytest==4.6.11
+six==1.11.0
+testinfra==3.4.0
