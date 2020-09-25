@@ -157,12 +157,10 @@ provisioner:
     - .git
 
 verifier:
-  # https://www.inspec.io/
-  name: inspec
-  sudo: true
-  # cli, documentation, html, progress, json, json-min, json-rspec, junit
-  reporter:
-    - cli
+  name: shell
+  remote_exec: false
+  # yamllint disable-line rule:line-length
+  command: testinfra -vvv --connection=docker --hosts=root@$KITCHEN_CONTAINER_ID --junit-xml junit-$KITCHEN_INSTANCE.xml test/integration/$KITCHEN_SUITE
 
 suites:
   - name: default
@@ -178,6 +176,3 @@ suites:
               - nomad
       pillars_from_files:
         nomad.sls: pillar.example
-    verifier:
-      inspec_tests:
-        - path: test/integration/default
